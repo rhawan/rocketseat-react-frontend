@@ -22,7 +22,10 @@ export default class Main extends Component {
 
   handleInputChange = (e) => {
       this.setState({ newBox: e.target.value });
+  }
 
+  handleNavigateBoxes = () => {
+    this.props.history.push("/box");
   }
 
   render() {
@@ -35,6 +38,7 @@ export default class Main extends Component {
             value={this.state.newBox}
             onChange={this.handleInputChange} />
           <button type="submit">Criar</button>
+          <button onClick={this.handleNavigateBoxes}>Escolher Box</button>
         </form>
       </div>
     );
